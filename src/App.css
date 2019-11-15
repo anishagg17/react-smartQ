@@ -1,6 +1,105 @@
+*{
+  /* box-sizing: border-box; */
+}
+
+body{
+  background: #eee;
+}
+
 .App {
   text-align: center;
+  display: flex;
+  /* grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr 1fr; */
+  /* grid-gap: 30px; */
+  flex-wrap: wrap;
+  padding: 30px;
+
 }
+
+.App > div {
+  display: inline-block;
+  box-shadow: 0 0 10px 2px #0003;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 30px 30px;
+  width: 250px;
+  position: relative;
+  background: #fff;
+}
+
+.App p {
+  display: inline-block;
+  margin: 20px 20px;
+  font-size: 1.2rem;
+
+}
+
+.nm{
+  /* width: 50%; */
+  text-align: left;
+  /* font-weight: bold; */
+}
+.nm::first-letter{
+  text-transform: capitalize;
+  font-size: 1.1em;
+}
+.pr{
+  /* float: right; */
+  width: 20%;
+  color: #555;
+  font-weight: bold;
+}
+
+
+.button{
+  padding: 0.5rem 1rem;
+  /* color: white; */
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  border:1px solid  rgb(224, 193, 18);
+  background: #eef3ee;
+  display: inline-block;
+}
+
+.App .button{
+  display: inline-block;
+  margin-top:10px; 
+  
+}
+
+.Nav .button{
+  background: #000;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.rec{
+  /* text-align: center; */
+  width: 30%;
+  position: relative;
+  margin: 0px auto;
+  background: #fff;
+  padding: 30px;
+}
+
+.buts{
+  left: 75%;
+  position: relative;
+}
+
+.det{
+  display: inline-block;
+  /* float: left; */
+  margin:10px;
+}
+.tot{
+  float: right;
+  margin:10px;
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -19,4 +118,52 @@
 
 .App-link {
   color: #09d3ac;
+}
+.In{
+  /* justify-content: center; */
+  background-color: rgb(224, 193, 18);
+  border-bottom: 1px solid black;
+  font-size: 1.2rem;
+  /* border-right: 0px;
+  border-left: 0px;
+  border-top: 0px; */
+}
+.Nav {
+  color: white;
+  height:40px;
+  display: grid;
+  grid-template: 1fr / 5fr 1fr 1fr;
+  grid-gap: 1rem;
+  padding: 20px 50px;
+  background-color: rgb(224, 193, 18);
+}
+h3,h2{
+  text-align: center;
+}
+.x{
+  width:100px;
+  margin: 10px auto;
+  text-align: center;
+
+}
+.xbtn{
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  width: 70px;
+}
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
