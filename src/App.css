@@ -23,7 +23,7 @@ body{
   border-radius: 10px;
   margin: 30px 30px;
   width: 250px;
-  position: relative;
+  /* position: relative; */
   background: #efe;
 }
 
@@ -79,15 +79,15 @@ body{
 .rec{
   /* text-align: center; */
   width: 30%;
-  position: relative;
+  /* position: relative; */
   margin: 0px auto;
-  background: #fff;
+  background:  #efe;
   padding: 30px;
 }
 
 .buts{
   left: 75%;
-  position: relative;
+  /* position: relative; */
 }
 
 .det{
