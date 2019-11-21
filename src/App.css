@@ -24,7 +24,7 @@ body{
   margin: 30px 30px;
   width: 250px;
   position: relative;
-  background: #fff;
+  background: #efe;
 }
 
 .App p {
@@ -56,9 +56,10 @@ body{
   /* color: white; */
   font-weight: bold;
   font-size: 1rem;
-  border: none;
+  /* border: none; */
   border-radius: 10px;
-  border:1px solid  rgb(224, 193, 18);
+  border:2px solid  rgb(145, 224, 18);
+  /* border:2px solid  black; */
   background: #eef3ee;
   display: inline-block;
 }
@@ -66,7 +67,6 @@ body{
 .App .button{
   display: inline-block;
   margin-top:10px; 
-  
 }
 
 .Nav .button{
@@ -121,8 +121,10 @@ body{
 }
 .In{
   /* justify-content: center; */
-  background-color: rgb(224, 193, 18);
-  border-bottom: 1px solid black;
+  border-radius: 6px;
+  /* z-index: +1; */
+  background-color:   rgb(128, 224, 18);
+  border: 2px solid rgba(0, 0, 0, 0.658);
   font-size: 1.2rem;
   /* border-right: 0px;
   border-left: 0px;
@@ -135,7 +137,7 @@ body{
   grid-template: 1fr / 5fr 1fr 1fr;
   grid-gap: 1rem;
   padding: 20px 50px;
-  background-color: rgb(224, 193, 18);
+  background-color: rgb(128, 224, 18);
 }
 h3,h2{
   text-align: center;

@@ -87,12 +87,14 @@ class App extends React.Component {
        })
      }
     />
-    
-    <div className='button' onClick={this.toggleSort}>Sort {!this.state.sby?"Dec":"Acc"}</div>
+    {/* <svg aria-hidden="true" width="12" height="12" viewBox="0 0 36 36"><path d="M2 26h32L18 11"></path></svg> */}
+      
+    <div className='button' onClick={this.toggleSort}>Sort {!this.state.sby?
+        "↓":"↑"}</div>
     <div className='button' onClick={this.togglePage}>{!this.state.page?"Check Out":"Home"}</div>
  </div>;
    const {food,page} =this.state
-   if(page==1){
+   if(page===1){
       let cart=[];  let price=0;
       food.forEach(f=>{
         if(f.cart>0){ 
@@ -129,6 +131,7 @@ class App extends React.Component {
           }>
             Confirm
           </div>
+          <br/><br/><br/><br/>
         </React.Fragment>
       )
     }
