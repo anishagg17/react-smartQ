@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Darkmode from 'darkmode-js';
 import axios from 'axios';
 const url='https://s3-ap-southeast-1.amazonaws.com/he-public-data/smartQFood8bef5a2.json';
 
@@ -78,7 +79,21 @@ class App extends React.Component {
     cu=cu^1;
     this.setState({  page : cu,  })
   };
+  
   render(){
+    const options = {
+      bottom: '20px', // default: '32px'
+      right: '32px', // default: '32px'
+      left: 'unset', // default: 'unset'
+      time: '0.5s', // default: '0.3s'
+      mixColor: '#fff', // default: '#fff'
+      backgroundColor: '#fff',  // default: '#fff'
+      buttonColorDark: '#100f2c',  // default: '#100f2c'
+      buttonColorLight: '#fff', // default: '#fff'
+      saveInCookies: false, // default: true,
+      label: '🌓', // default: ''
+      autoMatchOsTheme: true // default: true
+    }
     let navbar=<div className="Nav">
     <input type='text' className="In" value={this.state.search}
      onChange={
@@ -174,6 +189,7 @@ class App extends React.Component {
         <div className="App">
           {items.length ? ditems : `NO items`}
         </div>
+        {new Darkmode(options).showWidget()}
       </React.Fragment>
     )
   }
