@@ -2,33 +2,16 @@ import React from 'react';
 import './App.css';
 import Darkmode from 'darkmode-js';
 import axios from 'axios';
-const url='https://s3-ap-southeast-1.amazonaws.com/he-public-data/smartQFood8bef5a2.json';
+import Spinner from './Spinner';
+import {url,options}  from './config';
+import {Verify,getTime} from './Verify';
 
-const getTime = () =>{
-    let time=new Date();
-    time=time.getHours()+':'+time.getMinutes();
-    time=time.toString();
-    return time
-}
-const verify = (i,time) =>{
-  // return 1
-    let t1,t2,t3,t4,t;
-    t=i.availabletime;
-    t=t.split(',')
-    t1=t[0].split('-')
-    t2=t1[1];   t1=t1[0];
-    // console.log(t2)
-
-    t3=t[1].split('-')
-    t4=t3[1];   t3=t3[0];
-    // console.log(t4)
-
-    return (t1<=time && time<=t2) || (t3<=time && time<=t4) ;
-}
 const getHeading= (time) =>{
-  if(time <= "11" && time >= '7') return "Lunch"
-  if(time <= "23" && time >= '17') return "Dinner"
-  return  "None"
+  if(time <= "11" && time >= "7") return "Lunch"
+  else if(time <= "23" && time >= "17") return "Dinner"
+  else return <div style={{ margin : "300px", left:"300px", }}>
+             No Items at this time
+          </div>
 }
 const sortItems=(sitems,by)=>{
   if(by===0)
@@ -48,6 +31,7 @@ class App extends React.Component {
     sby:0,
     cart:[],
     page:0,
+    loading:true,
   }
   handelItem=(id,v)=>{
     let res=this.state.food;
@@ -62,10 +46,14 @@ class App extends React.Component {
       res.data.forEach((el,index) => {
         result=[...result,{...el,id:index,cart:0}]
       });
-      // console.log(result)
+      console.log(result);
       this.setState( {food : result}) 
+      this.setState( {loading  : false}) 
     })
-    .catch(()=> alert("UNABLE TO FETCH data"))
+    .catch(()=> {
+      alert("UNABLE TO FETCH data")
+      this.setState( {loading  : false})
+    })
   }
 
   toggleSort = () => {
@@ -81,19 +69,12 @@ class App extends React.Component {
   };
   
   render(){
-    const options = {
-      bottom: '20px', // default: '32px'
-      right: '32px', // default: '32px'
-      left: 'unset', // default: 'unset'
-      time: '0.5s', // default: '0.3s'
-      mixColor: '#fff', // default: '#fff'
-      backgroundColor: '#fff',  // default: '#fff'
-      buttonColorDark: '#100f2c',  // default: '#100f2c'
-      buttonColorLight: '#fff', // default: '#fff'
-      saveInCookies: false, // default: true,
-      label: '🌓', // default: ''
-      autoMatchOsTheme: true // default: true
+    if(this.state.loading){
+      return(
+        <Spinner/>
+      );
     }
+   
     let navbar=<div className="Nav">
     <input type='text' className="In" value={this.state.search}
      onChange={
@@ -102,7 +83,6 @@ class App extends React.Component {
        })
      }
     />
-    {/* <svg aria-hidden="true" width="12" height="12" viewBox="0 0 36 36"><path d="M2 26h32L18 11"></path></svg> */}
       
     <div className='button' onClick={this.toggleSort}>Sort {!this.state.sby?
         "↓":"↑"}</div>
@@ -153,10 +133,9 @@ class App extends React.Component {
     let items=this.state.food
     let time=getTime(); 
     let th=new Date().getHours();
-    let heading=  getHeading(th);
     // console.log(this.state.search)
     const sitems=items.filter((i) => {
-      return (verify(i,time) && i.itemname.includes(this.state.search))
+      return (Verify(i,time) && i.itemname.includes(this.state.search))
     })
     
     const pitems=sortItems(sitems,this.state.sby)
@@ -185,7 +164,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         {navbar}
-        <h2>{heading}</h2>
+        <h2>{getHeading(th)}</h2>
         <div className="App">
           {items.length ? ditems : `NO items`}
         </div>
