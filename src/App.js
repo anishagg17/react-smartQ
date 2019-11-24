@@ -4,7 +4,7 @@ import Darkmode from 'darkmode-js';
 import axios from 'axios';
 import Spinner from './Spinner';
 import {url,options}  from './config';
-import {Verify,getTime} from './Verify';
+import {Verify,getTime} from './Utils';
 
 const getHeading= (time) =>{
   if(time <= "11" && time >= "7") return "Lunch"
