@@ -6,12 +6,16 @@ import Spinner from './Spinner';
 import {url,options}  from './config';
 import {Verify,getTime} from './Utils';
 
-const getHeading= (time) =>{
-  if(time <= "11" && time >= "7") return "Lunch"
+
+const getHeading= () =>{
+  // time="19"
+  let time=new Date().getHours();
+  time=time.toString();
+  if(time.length<2) time="0"+time;
+  console.log(time)
+  if(time <= "11" && time >= "07") return "Lunch"
   else if(time <= "23" && time >= "17") return "Dinner"
-  else return <div style={{ margin : "300px", left:"300px", }}>
-             No Items at this time
-          </div>
+  else return " No Items at this time "
 }
 const sortItems=(sitems,by)=>{
   if(by===0)
@@ -40,6 +44,8 @@ class App extends React.Component {
     res[id]=c;
     this.setState({food:res})
   }
+  
+
   componentDidMount(){
     axios.get(url).then(res => { 
       let result=[];
@@ -69,6 +75,7 @@ class App extends React.Component {
   };
   
   render(){
+    // const classes=useStyles();
     if(this.state.loading){
       return(
         <Spinner/>
@@ -132,7 +139,6 @@ class App extends React.Component {
     }
     let items=this.state.food
     let time=getTime(); 
-    let th=new Date().getHours();
     // console.log(this.state.search)
     const sitems=items.filter((i) => {
       return (Verify(i,time) && i.itemname.includes(this.state.search))
@@ -164,9 +170,9 @@ class App extends React.Component {
     return (
       <React.Fragment>
         {navbar}
-        <h2>{getHeading(th)}</h2>
+        <h2>{getHeading()}</h2>
         <div className="App">
-          {items.length ? ditems : `NO items`}
+          {items.length>0 ? ditems : "NO items"}
         </div>
         {new Darkmode(options).showWidget()}
       </React.Fragment>

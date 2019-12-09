@@ -1,5 +1,6 @@
 export function Verify (i,time){
-//   return 1
+  // return 1
+  // time="19:00"
     let t1,t2,t3,t4,t;
     // if(time.length===4)  time='0'+time;
     // console.log("time",time);
@@ -25,9 +26,10 @@ export function getTime(){
     let min=time.getMinutes().toString();
     // console.log(min.length)
 
-    if(min.length != 2)   min='0'+min;
+    if(min.length !== 2)   min='0'+min;
 
     time=time.getHours().toString()+':'+min;
+    if(time.length===4)  time='0'+time;
     // time=time.toString();
     // console.log(time);
     return time
