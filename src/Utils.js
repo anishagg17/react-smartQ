@@ -1,5 +1,5 @@
 export function Verify (i,time){
-  // return 1
+  return 1
   // time="19:00"
     let t1,t2,t3,t4,t;
     // if(time.length===4)  time='0'+time;

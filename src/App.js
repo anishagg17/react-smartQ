@@ -91,9 +91,9 @@ class App extends React.Component {
      }
     />
       
-    <div className='button' onClick={this.toggleSort}>Sort {!this.state.sby?
+    <div className='button Sort' onClick={this.toggleSort}>Sort {!this.state.sby?
         "↓":"↑"}</div>
-    <div className='button' onClick={this.togglePage}>{!this.state.page?"Check Out":"Home"}</div>
+    <div className='button Sort' onClick={this.togglePage}>{!this.state.page?"Check Out":"Home"}</div>
  </div>;
    const {food,page} =this.state
    if(page===1){
@@ -118,15 +118,18 @@ class App extends React.Component {
         }
       })
       if(cart.length===0)
-      return(<React.Fragment>
+      return(
+        <div id='main'>
           {navbar}
           <h2>Cart is Empty</h2>
-          </React.Fragment>)
+          </div>)
       return(
-        <React.Fragment>
+        <div id='main'>
           {navbar}
-          <h3 >Your Order Details</h3>
-          {cart}
+          <h3 id='heading'>Your Order Details</h3>
+          {/* <div id='cart'> */}
+              {cart}
+          {/* </div> */}
           <p className="x">Total : {price}Rs</p>
           <div className='button xbtn' onClick={
             ()=>{alert("order placed")}
@@ -134,7 +137,7 @@ class App extends React.Component {
             Confirm
           </div>
           <br/><br/><br/><br/>
-        </React.Fragment>
+          </div>
       )
     }
     let items=this.state.food
@@ -168,14 +171,14 @@ class App extends React.Component {
     });
     
     return (
-      <React.Fragment>
+      <div id='main'>
         {navbar}
-        <h2>{getHeading()}</h2>
+        <h2 id='heading'>{getHeading()}</h2>
         <div className="App">
           {items.length>0 ? ditems : "NO items"}
         </div>
         {new Darkmode(options).showWidget()}
-      </React.Fragment>
+      </div>
     )
   }
 }
