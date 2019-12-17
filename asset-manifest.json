@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-smartQ/static/css/main.e8c13438.chunk.css",
-    "main.js": "/react-smartQ/static/js/main.e67eff43.chunk.js",
-    "main.js.map": "/react-smartQ/static/js/main.e67eff43.chunk.js.map",
+    "main.js": "/react-smartQ/static/js/main.6cfb931d.chunk.js",
+    "main.js.map": "/react-smartQ/static/js/main.6cfb931d.chunk.js.map",
     "runtime-main.js": "/react-smartQ/static/js/runtime-main.16d88d77.js",
     "runtime-main.js.map": "/react-smartQ/static/js/runtime-main.16d88d77.js.map",
     "static/js/2.64006e82.chunk.js": "/react-smartQ/static/js/2.64006e82.chunk.js",
     "static/js/2.64006e82.chunk.js.map": "/react-smartQ/static/js/2.64006e82.chunk.js.map",
     "index.html": "/react-smartQ/index.html",
-    "precache-manifest.c8966b0ad1221054cbfffacbaf689042.js": "/react-smartQ/precache-manifest.c8966b0ad1221054cbfffacbaf689042.js",
+    "precache-manifest.fb138dcd3eeab8cfedab57f98519023b.js": "/react-smartQ/precache-manifest.fb138dcd3eeab8cfedab57f98519023b.js",
     "service-worker.js": "/react-smartQ/service-worker.js",
     "static/css/main.e8c13438.chunk.css.map": "/react-smartQ/static/css/main.e8c13438.chunk.css.map"
   },
@@ -16,6 +16,6 @@
     "static/js/runtime-main.16d88d77.js",
     "static/js/2.64006e82.chunk.js",
     "static/css/main.e8c13438.chunk.css",
-    "static/js/main.e67eff43.chunk.js"
+    "static/js/main.6cfb931d.chunk.js"
   ]
 }
