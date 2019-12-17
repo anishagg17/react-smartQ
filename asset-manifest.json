@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/react-smartQ/static/css/main.fb371c4e.chunk.css",
-    "main.js": "/react-smartQ/static/js/main.f180c7f3.chunk.js",
-    "main.js.map": "/react-smartQ/static/js/main.f180c7f3.chunk.js.map",
+    "main.css": "/react-smartQ/static/css/main.e8c13438.chunk.css",
+    "main.js": "/react-smartQ/static/js/main.e67eff43.chunk.js",
+    "main.js.map": "/react-smartQ/static/js/main.e67eff43.chunk.js.map",
     "runtime-main.js": "/react-smartQ/static/js/runtime-main.16d88d77.js",
     "runtime-main.js.map": "/react-smartQ/static/js/runtime-main.16d88d77.js.map",
     "static/js/2.64006e82.chunk.js": "/react-smartQ/static/js/2.64006e82.chunk.js",
     "static/js/2.64006e82.chunk.js.map": "/react-smartQ/static/js/2.64006e82.chunk.js.map",
     "index.html": "/react-smartQ/index.html",
-    "precache-manifest.2c4f73819670c1b55dfda292c1077515.js": "/react-smartQ/precache-manifest.2c4f73819670c1b55dfda292c1077515.js",
+    "precache-manifest.c8966b0ad1221054cbfffacbaf689042.js": "/react-smartQ/precache-manifest.c8966b0ad1221054cbfffacbaf689042.js",
     "service-worker.js": "/react-smartQ/service-worker.js",
-    "static/css/main.fb371c4e.chunk.css.map": "/react-smartQ/static/css/main.fb371c4e.chunk.css.map"
+    "static/css/main.e8c13438.chunk.css.map": "/react-smartQ/static/css/main.e8c13438.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.16d88d77.js",
     "static/js/2.64006e82.chunk.js",
-    "static/css/main.fb371c4e.chunk.css",
-    "static/js/main.f180c7f3.chunk.js"
+    "static/css/main.e8c13438.chunk.css",
+    "static/js/main.e67eff43.chunk.js"
   ]
 }
